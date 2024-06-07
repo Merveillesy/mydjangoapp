@@ -12,20 +12,6 @@ class LoginForm(forms.Form):
     
     
 class SignupForm(UserCreationForm):
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     # for field in self.fields:
-    #     #     field.widget.attrs.update({"class": "form-control"})
-    #     print(self.fields["username"].widget)
-    #     self.fields["username"].widget.attrs.update({"class": "form-control"})
-    #     # self.fields["comment"].widget.attrs.update(size="40")
-        
-    def as_p(self):
-        return SafeString(super().as_div().replace("<p>", "<p class='form-group'>"))
-    
-    def as_div(self):
-        return SafeString(super().as_div().replace("<div>", "<div class='form-group'>"))
-
         
     class Meta(UserCreationForm.Meta):
         model =get_user_model()
