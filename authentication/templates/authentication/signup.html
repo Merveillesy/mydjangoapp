@@ -1,8 +1,19 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Inscription</h2>
-{% if form.errors %} {{ form.errors }} {% endif %}
-<form method="post">
-  {{ form.as_p }} {% csrf_token %}
-  <button type="submit">S’inscrire</button>
+<h2 class="auth-title">Inscription</h2>
+<div class="errors">{% if form.errors %} {{ form.errors }} {% endif %}</div>
+<form method="post" class="signup-form">
+  {% csrf_token %} {% for field in form %}
+  <div class="form-group">
+    <label for="{{ field.auto_id}}">{{ field.label }}</label>
+    {{field}}
+  </div>
+  {% endfor %}
+
+  <button type="submit" class="btn">S’inscrire</button>
 </form>
+<p>
+  Déjà membre ?
+  <a href="{% url 'login' %}"> Connectez-vous !</a>
+</p>
+</p>
 {% endblock content %}
