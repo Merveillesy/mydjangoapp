@@ -17,4 +17,3 @@ class Blog(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     starred = models.BooleanField(default=False)
     
-    mmm
