@@ -1,5 +1,5 @@
 {% extends 'base.html' %}{% block content %}
-<h2 class="auth-title">Connection</h2>
+<h2 class="auth-title">Connexion</h2>
 <p style="color: red">{{ message }}</p>
 <form method="post" class="login-form">
   {% csrf_token %} {% for field in form %}

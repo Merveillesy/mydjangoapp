@@ -20,3 +20,10 @@ class SignupForm(UserCreationForm):
         
 class PostCodeForm(forms.Form):
     post_code = forms.CharField(max_length=10, validators=[validators.PostCodeValidator])
+    
+    
+class UploadProfilePhotoForm(forms.ModelForm):
+    class Meta :
+        model= get_user_model()
+        fields= ('profile_photo',)
+        
